@@ -26,6 +26,11 @@ export class ContactsListComponent implements OnInit {
         lastName:  'Hess',
         email:     'martin@example.com'
       }
+      {
+        firstName: 'Martin',
+        lastName:  'Hessa',
+        email:     'martin@example.com'
+      }
     ]
   }
 
