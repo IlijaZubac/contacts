@@ -25,7 +25,7 @@ export class ContactsListComponent implements OnInit {
         firstName: 'Martin',
         lastName:  'Hess',
         email:     'martin@example.com'
-      }
+      },
       {
         firstName: 'Martin',
         lastName:  'Hessa',
@@ -34,6 +34,11 @@ export class ContactsListComponent implements OnInit {
     ]
   }
 
+    removeContact(contact){
+      let index =this.contacts.indexOf(contact);
+      this.contacts.splice(index, 1);
+      //console.log(contact);
+    }
   ngOnInit() {
   } 
 
