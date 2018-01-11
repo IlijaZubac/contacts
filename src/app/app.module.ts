@@ -10,6 +10,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { MessagesComponent } from './components/messages/messages.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FilterPipe } from './pipes/filter.pipe';
+import { ContactsService } from './services/contacts.service';
 
 const appRoutes: Routes = [
   { path: 'contacts', component: ContactsListComponent },
@@ -38,7 +39,9 @@ const appRoutes: Routes = [
       appRoutes
     )
   ],
-  providers: [],
+  providers: [
+    ContactsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FilterPipe } from '../../pipes/filter.pipe';
+import { FilterPipe } from '../../pipes/filter.pipe'; //importovano
+import { ContactsService } from '../../services/contacts.service'; // service
 
 @Component({
   selector: 'app-contacts-list',
@@ -10,29 +11,8 @@ export class ContactsListComponent implements OnInit {
 
   searchTerm = ''; // dodato kao search term za custom pipe
   contacts;
-  constructor() { 
-    this.contacts = [
-      {
-        firstName: 'John',
-        lastName:  'Doe',
-        email:     'john@example.com'
-      },
-      {
-        firstName: 'Daniel',
-        lastName:  'Ros',
-        email:     'daniel@example.com'
-      },
-      {
-        firstName: 'Martin',
-        lastName:  'Hess',
-        email:     'martin@example.com'
-      },
-      {
-        firstName: 'Martin',
-        lastName:  'Hessa',
-        email:     'martin@example.com'
-      }
-    ]
+  constructor(private _contactsService: ContactsService) { 
+    this.contacts = this._contactsService.getContacts();
   }
 
     removeContact(contact){
