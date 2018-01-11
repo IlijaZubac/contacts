@@ -1,3 +1,4 @@
+Search term: <input type="text" name="" [(ngModel)]="searchTerm"> <!-- dodato za unos pipea-->
 <table class="table table">
   <thead>
     <tr>
@@ -7,10 +8,10 @@
     <th>Actions</th>
     </tr>
   </thead>
-  <tr *ngFor="let contact of contacts">
+  <tr *ngFor="let contact of contacts | filter:searchTerm">
     <td>{{ contact.firstName }}</td>
     <td>{{contact.lastName}}</td>
-    <td>{{contact.email}}</td>
+    <td>{{contact.email | uppercase }}</td>
     <td>
       <button class="btn btn-danger"
         (click)="removeContact(contact)">
@@ -20,3 +21,6 @@
   </tr>
 
 </table>
+
+ 
+ 

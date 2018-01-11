@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FilterPipe } from '../../pipes/filter.pipe';
 
 @Component({
   selector: 'app-contacts-list',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactsListComponent implements OnInit {
 
-  
+  searchTerm = ''; // dodato kao search term za custom pipe
   contacts;
   constructor() { 
     this.contacts = [
