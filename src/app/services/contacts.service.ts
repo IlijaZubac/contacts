@@ -28,6 +28,10 @@ export class ContactsService {
         }
       ]
     }
+
+    public getMessages(){
+     return 'Hello';
+    }
    }
 
 }
