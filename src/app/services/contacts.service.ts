@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class ContactsService {
 
-  constructor() {}
+  
+  constructor(private _httpClient: HttpClient){
    public getContacts(){
-      return [
+    return this._httpClient.get<any []>('http://localhost:8000/contacts.php');
+/*      return [
         {
           firstName: 'John',
           lastName:  'Doe',
@@ -26,12 +29,13 @@ export class ContactsService {
           lastName:  'Hessa',
           email:     'martin@example.com'
         }
-      ]
+      ];*/
     }
 
     public getMessages(){
      return 'Hello';
     }
-   }
+   
+  }
 
-}
+
